@@ -1,3 +1,4 @@
+/* Shared styles for all screen sizes */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -85,4 +86,31 @@ button {
   margin-left: 5px;
   font-size: 14px;
   color: #666;
+}
+
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  form {
+    margin: 0 auto;
+  }
+
+  .category {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .category h2 {
+    font-size: 16px;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 8px;
+    font-size: 16px;
+  }
 }
