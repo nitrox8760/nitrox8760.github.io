@@ -69,10 +69,12 @@ button {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
+  overflow: hidden; /* Add this to contain the floated elements */
 }
 
 .category h2 {
-  margin-bottom: 5px;
+  margin: 0; /* Remove the margin to eliminate the gap */
+  padding-bottom: 5px; /* Add some spacing between the heading and inputs */
   font-size: 18px;
   color: #007bff;
 }
@@ -80,10 +82,16 @@ button {
 /* Input field spacing */
 .category label {
   margin-top: 10px;
+  display: block; /* Add this to create a block layout for labels */
+}
+
+/* Fix the overlapping issue with the second input */
+.category input {
+  width: 100%; /* Add this to make the inputs occupy the full width */
+  box-sizing: border-box; /* Add this to include padding and border in the width calculation */
 }
 
 /* Adjust button position */
 button {
-  margin-top: 30px;
+  margin-top: 20px;
 }
-
