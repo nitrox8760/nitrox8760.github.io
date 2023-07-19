@@ -1,3 +1,7 @@
+function formatCurrency(value) {
+  return `£${value.toFixed(2)}`;
+}
+
 function loadDefaultValues() {
   const config = {
     baseFare: 5.0,
@@ -8,10 +12,10 @@ function loadDefaultValues() {
     rideDistance: 5,
   };
 
-  document.getElementById('baseFare').value = config.baseFare;
-  document.getElementById('costPerMinute').value = config.costPerMinute;
-  document.getElementById('costPerMile').value = config.costPerMile;
-  document.getElementById('bookingFee').value = config.bookingFee;
+  document.getElementById('baseFare').value = formatCurrency(config.baseFare);
+  document.getElementById('costPerMinute').value = formatCurrency(config.costPerMinute);
+  document.getElementById('costPerMile').value = formatCurrency(config.costPerMile);
+  document.getElementById('bookingFee').value = formatCurrency(config.bookingFee);
   document.getElementById('timeOfJob').value = config.timeOfJob;
   document.getElementById('rideDistance').value = config.rideDistance;
 }
@@ -19,17 +23,17 @@ function loadDefaultValues() {
 document.getElementById('costCalculator').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const baseFare = parseFloat(document.getElementById('baseFare').value);
-  const costPerMinute = parseFloat(document.getElementById('costPerMinute').value);
-  const costPerMile = parseFloat(document.getElementById('costPerMile').value);
-  const bookingFee = parseFloat(document.getElementById('bookingFee').value);
+  const baseFare = parseFloat(document.getElementById('baseFare').value.replace(/[^\d.]/g, ''));
+  const costPerMinute = parseFloat(document.getElementById('costPerMinute').value.replace(/[^\d.]/g, ''));
+  const costPerMile = parseFloat(document.getElementById('costPerMile').value.replace(/[^\d.]/g, ''));
+  const bookingFee = parseFloat(document.getElementById('bookingFee').value.replace(/[^\d.]/g, ''));
   const timeOfJob = parseFloat(document.getElementById('timeOfJob').value);
-  const rideDistance = parseFloat(document.getElementById('rideDistance').value);
+  const rideDistance = parseFloat(document.getElementById('rideDistance').value.replace(/[^\d.]/g, ''));
 
   const fare = baseFare + (costPerMinute * timeOfJob) + (costPerMile * rideDistance) + bookingFee;
   
-  document.getElementById('result').textContent = `$${fare.toFixed(2)}`;
-})
+  document.getElementById('result').textContent = formatCurrency(fare);
+});
 
 // Load default values when the page loads
 loadDefaultValues();
