@@ -1,16 +1,13 @@
-// config.js
-const defaultConfig = {
-  baseFare: 5.0,
-  costPerMinute: 0.2,
-  costPerMile: 1.0,
-  bookingFee: 1.5,
-  timeOfJob: 30,
-  rideDistance: 5,
-};
-
-// script.js
+<script>
 function loadDefaultValues() {
-  const config = defaultConfig;
+  const config = {
+    baseFare: 5.0,
+    costPerMinute: 0.2,
+    costPerMile: 1.0,
+    bookingFee: 1.5,
+    timeOfJob: 30,
+    rideDistance: 5,
+  };
 
   document.getElementById('baseFare').value = config.baseFare;
   document.getElementById('costPerMinute').value = config.costPerMinute;
@@ -32,8 +29,9 @@ document.getElementById('costCalculator').addEventListener('submit', function(ev
 
   const fare = baseFare + (costPerMinute * timeOfJob) + (costPerMile * rideDistance) + bookingFee;
   
-  document.getElementById('result').textContent = `£${fare.toFixed(2)}`;
-});
+  document.getElementById('result').textContent = `$${fare.toFixed(2)}`;
+}
 
 // Load default values when the page loads
 loadDefaultValues();
+</script>
