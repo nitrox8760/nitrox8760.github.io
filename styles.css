@@ -1,14 +1,11 @@
-/* styles.css */
-
 body {
   font-family: Arial, sans-serif;
-  font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 400px;
   margin: 40px auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -25,17 +22,39 @@ form {
   flex-direction: column;
 }
 
-label {
+/* Category styling */
+.category {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  overflow: hidden; /* Add this to contain the floated elements */
+}
+
+.category h2 {
+  margin: 0; /* Remove the margin to eliminate the gap */
+  padding-bottom: 5px; /* Add some spacing between the heading and inputs */
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Input field spacing */
+.category label {
   margin-top: 10px;
-  display: block;
+  display: block; /* Add this to create a block layout for labels */
+}
+
+/* Fix the overlapping issue with the second input */
+.category input {
+  width: 100%; /* Add this to make the inputs occupy the full width */
+  box-sizing: border-box; /* Add this to include padding and border in the width calculation */
 }
 
 input[type="number"] {
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  box-sizing: border-box;
 }
 
 button {
@@ -46,8 +65,6 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  display: block;
-  margin: 0 auto;
 }
 
 #output {
@@ -65,43 +82,7 @@ button {
 }
 
 .unit {
-  margin-left: 3px;
+  margin-left: 5px;
   font-size: 14px;
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    max-width: 100%;
-    margin: 20px;
-    padding: 10px;
-  }
-
-  input[type="number"] {
-    padding: 6px;
-    font-size: 14px;
-  }
-
-  .category {
-    margin-bottom: 15px;
-    padding: 10px;
-  }
-
-  .category h2 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .unit {
-    font-size: 12px;
-    margin-left: 2px;
-  }
-
-  button {
-    margin-top: 20px;
-  }
+  color: #666;
 }
