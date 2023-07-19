@@ -2,10 +2,6 @@ function formatCurrency(value) {
   return `£${value.toFixed(2)}`;
 }
 
-function parseCurrency(value) {
-  return parseFloat(value.replace(/[^\d.]/g, '')) || 0;
-}
-
 function loadDefaultValues() {
   const config = {
     baseFare: 5.0,
@@ -21,21 +17,21 @@ function loadDefaultValues() {
   document.getElementById('costPerMile').value = formatCurrency(config.costPerMile);
   document.getElementById('bookingFee').value = formatCurrency(config.bookingFee);
   document.getElementById('timeOfJob').value = config.timeOfJob;
-  document.getElementById('rideDistance').value = formatCurrency(config.rideDistance);
+  document.getElementById('rideDistance').value = config.rideDistance;
 }
 
 document.getElementById('costCalculator').addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const baseFare = parseCurrency(document.getElementById('baseFare').value);
-  const costPerMinute = parseCurrency(document.getElementById('costPerMinute').value);
-  const costPerMile = parseCurrency(document.getElementById('costPerMile').value);
-  const bookingFee = parseCurrency(document.getElementById('bookingFee').value);
-  const timeOfJob = parseCurrency(document.getElementById('timeOfJob').value);
-  const rideDistance = parseCurrency(document.getElementById('rideDistance').value);
+  const baseFare = parseFloat(document.getElementById('baseFare').value.replace(/[^\d.]/g, ''));
+  const costPerMinute = parseFloat(document.getElementById('costPerMinute').value.replace(/[^\d.]/g, ''));
+  const costPerMile = parseFloat(document.getElementById('costPerMile').value.replace(/[^\d.]/g, ''));
+  const bookingFee = parseFloat(document.getElementById('bookingFee').value.replace(/[^\d.]/g, ''));
+  const timeOfJob = parseFloat(document.getElementById('timeOfJob').value);
+  const rideDistance = parseFloat(document.getElementById('rideDistance').value.replace(/[^\d.]/g, ''));
 
   const fare = baseFare + (costPerMinute * timeOfJob) + (costPerMile * rideDistance) + bookingFee;
-
+  
   document.getElementById('result').textContent = formatCurrency(fare);
 });
 
