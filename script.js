@@ -37,7 +37,7 @@ document.getElementById('costCalculator').addEventListener('submit', function(ev
   const fare = baseFare + (costPerMinute * timeOfJob) + (costPerMile * rideDistance) + bookingFee;
 
   document.getElementById('result').textContent = formatCurrency(fare);
-}
+});
 
 // Load default values when the page loads
 loadDefaultValues();
