@@ -3,7 +3,7 @@ function formatCurrency(value) {
 }
 
 function parseCurrency(value) {
-  return parseFloat(value.replace(/[^\d.]/g, ''));
+  return parseFloat(value.replace(/[^\d.]/g, '')) || 0;
 }
 
 function loadDefaultValues() {
