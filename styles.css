@@ -26,10 +26,24 @@ label {
   margin-top: 10px;
 }
 
+.input-group {
+  position: relative;
+  display: inline-block;
+}
+
 input[type="number"] {
+  padding-right: 30px; /* To make space for the unit */
+  text-align: right; /* To align the number to the right in the input box */
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
+}
+
+.unit {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 button {
