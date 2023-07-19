@@ -61,3 +61,29 @@ button {
   font-size: 14px;
   color: #666;
 }
+
+/* Category styling */
+.category {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.category h2 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Input field spacing */
+.category label {
+  margin-top: 10px;
+}
+
+/* Adjust button position */
+button {
+  margin-top: 30px;
+}
+
