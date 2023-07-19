@@ -31,7 +31,7 @@ document.getElementById('costCalculator').addEventListener('submit', function(ev
   const costPerMinute = parseCurrency(document.getElementById('costPerMinute').value);
   const costPerMile = parseCurrency(document.getElementById('costPerMile').value);
   const bookingFee = parseCurrency(document.getElementById('bookingFee').value);
-  const timeOfJob = parseFloat(document.getElementById('timeOfJob').value);
+  const timeOfJob = parseCurrency(document.getElementById('timeOfJob').value);
   const rideDistance = parseCurrency(document.getElementById('rideDistance').value);
 
   const fare = baseFare + (costPerMinute * timeOfJob) + (costPerMile * rideDistance) + bookingFee;
