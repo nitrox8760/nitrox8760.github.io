@@ -1,4 +1,3 @@
-<script>
 function loadDefaultValues() {
   const config = {
     baseFare: 5.0,
@@ -34,4 +33,3 @@ document.getElementById('costCalculator').addEventListener('submit', function(ev
 
 // Load default values when the page loads
 loadDefaultValues();
-</script>
