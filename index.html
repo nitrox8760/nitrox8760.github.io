@@ -8,25 +8,41 @@
   <div class="container">
     <h1>Helping Hands Cost Calculator</h1>
     <form id="costCalculator">
-      <label for="baseFare">Base Fare (£):</label>
-      <input type="number" id="baseFare" step="0.01" min="0" required>
+      <label for="baseFare">Base Fare:</label>
+      <div class="input-group">
+        <input type="number" id="baseFare" step="0.01" min="0" required>
+        <span class="unit">£</span>
+      </div>
 
-      <label for="costPerMinute">Cost per Minute (£):</label>
-      <input type="number" id="costPerMinute" step="0.01" min="0" required>
+      <label for="costPerMinute">Cost per Minute:</label>
+      <div class="input-group">
+        <input type="number" id="costPerMinute" step="0.01" min="0" required>
+        <span class="unit">£</span>
+      </div>
 
-      <label for="costPerMile">Cost per Mile (£):</label>
-      <input type="number" id="costPerMile" step="0.01" min="0" required>
+      <label for="costPerMile">Cost per Mile:</label>
+      <div class="input-group">
+        <input type="number" id="costPerMile" step="0.01" min="0" required>
+        <span class="unit">£</span>
+      </div>
 
-      <label for="bookingFee">Booking Fee (£):</label>
-      <input type="number" id="bookingFee" step="0.01" min="0" required>
+      <label for="bookingFee">Booking Fee:</label>
+      <div class="input-group">
+        <input type="number" id="bookingFee" step="0.01" min="0" required>
+        <span class="unit">£</span>
+      </div>
 
       <label for="timeOfJob">Time of Job:</label>
-      <input type="number" id="timeOfJob" step="1" min="0" required>
-      <span class="unit">minutes</span>
+      <div class="input-group">
+        <input type="number" id="timeOfJob" step="1" min="0" required>
+        <span class="unit">minutes</span>
+      </div>
 
       <label for="rideDistance">Ride Distance:</label>
-      <input type="number" id="rideDistance" step="0.01" min="0" required>
-      <span class="unit">miles</span>
+      <div class="input-group">
+        <input type="number" id="rideDistance" step="0.01" min="0" required>
+        <span class="unit">miles</span>
+      </div>
 
       <button type="submit">Calculate Cost</button>
     </form>
