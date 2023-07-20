@@ -97,6 +97,7 @@ button {
 /* Responsive styles for mobile devices */
 @media only screen and (max-width: 600px) {
   .container {
+    margin: 0px;
     border: none;
     box-shadow: none;
   }
