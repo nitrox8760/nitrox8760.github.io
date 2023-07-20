@@ -100,23 +100,4 @@ button {
     border: none;
     box-shadow: none;
   }
-
-  form {
-    margin: 0 auto;
-  }
-
-  .category {
-    padding: 8px;
-    margin-bottom: 15px;
-  }
-
-  .category h2 {
-    font-size: 16px;
-  }
-
-  button {
-    margin-top: 15px;
-    padding: 8px;
-    font-size: 16px;
-  }
 }
